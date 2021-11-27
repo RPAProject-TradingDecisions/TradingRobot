@@ -1,0 +1,22 @@
+//section 1, ioana
+//all files are excel
+website -> read from sheet
+Read symbols from sheet -> store in memory (array sau dictionary)
+Read indicators from sheet -> store in memory (array sau dictionary)
+Read mails from sheet -> store in memory (array sau dictionary)
+
+//section 2, moldo
+For each website
+	navigate
+	for each symbol
+		data scraping -> data table
+		processing (with respect to the indicators) -> decision (buy/sell/nothing)
+		append decision column to data table
+		create history sheet for timestamp (yyyy/mm/dd) -> write data table here
+		create excel sheet for sending (same content as history sheet for that day) 
+		
+//section 3 - ioana		
+for each email
+	send mail with excel
+	
+##################################################################	
