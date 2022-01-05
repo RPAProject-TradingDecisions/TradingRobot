@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1147,1162</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>820.8,1168</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadSymbols_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -72,9 +72,13 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadSymbols" sap:VirtualizedContainerService.HintSize="476,1097" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="ReadSymbols" sap:VirtualizedContainerService.HintSize="475.2,1103.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="C:\Users\moldo\Desktop\RPA\Project\TradingRobot\files\Inputs.xlsx" Name="inputSheet" />
+      <Variable x:TypeArguments="x:String" Name="inputSheet">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">H:\Faculta\an 3\RPA\TradingRobot\files\Inputs.xlsx</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:Object" Name="urlFormat" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -82,7 +86,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Initialize output array" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Initialize output array" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[urls]</OutArgument>
       </Assign.To>
@@ -90,18 +94,18 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new List(of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ReadCell Cell="A2" DisplayName="Read website url format" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadCell_1" SheetName="website" WorkbookPath="[inputSheet]">
+    <ui:ReadCell Cell="A2" DisplayName="Read website url format" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="ReadCell_1" SheetName="website" WorkbookPath="[inputSheet]">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:Object">[urlFormat]</OutArgument>
       </ui:ReadCell.Result>
     </ui:ReadCell>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Process Excel Sheet" sap:VirtualizedContainerService.HintSize="434,647" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" ReadOnly="True" WorkbookPath="[inputSheet]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Process Excel Sheet" sap:VirtualizedContainerService.HintSize="433.6,651.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" ReadOnly="True" WorkbookPath="[inputSheet]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="382,538" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="380.8,541.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="symbols" />
               <Variable x:TypeArguments="x:String" Name="symbolUrl" />
@@ -111,8 +115,8 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadColumn DisplayName="Read symbol column" sap:VirtualizedContainerService.HintSize="340,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_1" Result="[symbols]" SheetName="symbols" StartingCell="A2" />
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Iterate through symbols" sap:VirtualizedContainerService.HintSize="340,347" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[symbols]">
+            <ui:ExcelReadColumn DisplayName="Read symbol column" sap:VirtualizedContainerService.HintSize="339.2,60" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_1" Result="[symbols]" SheetName="symbols" StartingCell="A2" />
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Iterate through symbols" sap:VirtualizedContainerService.HintSize="339.2,348.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[symbols]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
